@@ -16,7 +16,7 @@
 #define CTC 				2
 #define FAST_PWM 			3
 
-#define TIMER_MODE 			NORMAL
+#define TIMER_MODE 			PWM_PHASECORRECT
 
 #define CLK_OFF 		0
 #define CLK_PRE1 		1
@@ -27,7 +27,7 @@
 #define EXTCLK_FALLING 	6
 #define EXTCLK_RISING 	7
 
-#define PRESCALER_MODE 		CLK_PRE1024
+#define PRESCALER_MODE 		CLK_PRE256
 //Modes for non-PWM mode
 #define NORMAL_OC0		0
 #define TOG_OC0			1
@@ -53,6 +53,6 @@ void MCAL_TIMER_Timer0_InterruptOVF_Enable(void);
 void MCAL_TIMER_Timer0_InterruptOVF_Disable(void);
 void DelayUs(u32 LOC_u32Time);
 void DelayMs(u32 LOC_u32Time);
-void MCAL_TIMER_voidTimer0_OVFSetCallBack(void(*Timer0Action)(void));
+void MCAL_TIMER_voidTimer0_SetCallBack(void(*Timer0Action)(void));
 void MCAL_TIMER_voidTimer0_COMPSetCallBack(void(*Timer0Action)(void));
 #endif /* MCAL_TIMER_TIMER0_H_ */

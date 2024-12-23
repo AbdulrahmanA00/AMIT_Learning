@@ -8,7 +8,7 @@
 
 void HAL_EEPROM_voidWriteData(u16 LOC_u16Location,u8 LOC_u8Data)
 {
-	u8 LOC_u8FixedAddress = 0b01010000,LOC_u8Location;
+	u8 LOC_u8FixedAddress = 0b01010000,LOC_u8Location=0;
 	if (LOC_u16Location <=255 )
 	{
 		LOC_u8FixedAddress = 0b01010000;
@@ -42,7 +42,7 @@ void HAL_EEPROM_voidWriteData(u16 LOC_u16Location,u8 LOC_u8Data)
 
 void HAL_EEPROM_voidReadData(u16 LOC_u16Location,u8* LOC_Pu8Data)
 {
-	u8 LOC_u8FixedAddress = 0b01010000,LOC_u8Location;
+	u8 LOC_u8FixedAddress = 0b01010000,LOC_u8Location=0;
 	if (LOC_u16Location <=255 )
 	{
 		LOC_u8FixedAddress = 0b01010000;

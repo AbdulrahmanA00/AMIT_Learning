@@ -29,7 +29,7 @@
 #define KEYPAD_R3_PORT   PortC
 #define KEYPAD_C0_PORT   PortD
 #define KEYPAD_C1_PORT   PortD
-#define KEYPAD_C2_PORT   PortD
+#define KEYPAD_C2_PORT   PortA
 #define KEYPAD_C3_PORT   PortD
 
 /*
@@ -49,7 +49,7 @@
 #define KEYPAD_R3_PIN	 PIN7
 #define KEYPAD_C0_PIN	 PIN2
 #define KEYPAD_C1_PIN	 PIN3
-#define KEYPAD_C2_PIN	 PIN4
+#define KEYPAD_C2_PIN	 PIN2
 #define KEYPAD_C3_PIN	 PIN6
 
 /*******************************Prototyping Section *****************************************/

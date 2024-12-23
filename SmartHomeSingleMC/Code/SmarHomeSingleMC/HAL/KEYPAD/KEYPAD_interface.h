@@ -15,11 +15,11 @@
 
 /*******************************Includes Section *****************************************/
 
-#include "..\..\Common\MCU.h"
-#include "..\..\Common\Macros.h"
-#include "..\..\Common\STD_Types.h"
-
-#include "..\..\MCAL\DIO\DIO.h"
+#include "../../Common/MCU.h"
+#include "../../Common/Macros.h"
+#include "../../Common/STD_Types.h"
+#include "../../APP/LcdUser/LcdUser_interface.h"
+#include "../../MCAL/DIO/DIO.h"
 
 #include "KEYPAD_private.h"
 #include "KEYPAD_config.h"

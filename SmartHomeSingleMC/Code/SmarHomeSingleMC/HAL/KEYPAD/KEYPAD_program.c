@@ -17,16 +17,13 @@
 #include "KEYPAD_interface.h"
 #include "KEYPAD_config.h"
 #include "KEYPAD_private.h"
-#include "../AC/AC.h"
 
-
-/*extern u8 volatile G_FanFlag;
+extern u8 volatile G_FanFlag;
 extern u8 volatile G_FanFlagOn;
 extern u8 volatile G_FanFlagOff;
 extern u8 volatile G_FanControlFlag;
-extern u8 volatile G_LM35;*/
-//extern void APP_FAN_void_AppFanReadWithoutWrite(void);
-
+extern u8 volatile G_LM35;
+extern void APP_FAN_void_AppFanReadWithoutWrite(void);
 
 /*****************************************************************************************/
 
@@ -92,7 +89,7 @@ STD_TYPE HAL_KEYPAD_u8_KaypadButton(u8 *Ploc_u8_ButtuonValue)
 		while(1)
 		{
 			//APP_LM35WithDCmotor_Void_LM35WithDCmotorOnOff();
-			//APP_FAN_void_AppFanReadWithoutWrite();
+		//	APP_FAN_void_AppFanReadWithoutWrite();
 			c = 3;
 			for(column =0; column <= 3; column++)
 			{
@@ -161,7 +158,6 @@ STD_TYPE HAL_KEYPAD_u8_KaypadButton1(u8 *Ploc_u8_ButtuonValue)
 	{
 		while(1)
 		{
-
 			//APP_LM35WithDCmotor_Void_LM35WithDCmotorOnOff();
 			//APP_FAN_void_AppFanReadWithoutWrite();
 			c = 3;
@@ -210,6 +206,7 @@ STD_TYPE HAL_KEYPAD_u8_KaypadButton1(u8 *Ploc_u8_ButtuonValue)
 	return Loc_u8_Retval;
 }
 
+u8 m;
 STD_TYPE HAL_KEYPAD_u8_HomeKaypadButton(u8 *Ploc_u8_ButtuonValue)
 {
 	u8 Loc_u8_Retval = E_NOT_OK;
@@ -231,23 +228,17 @@ STD_TYPE HAL_KEYPAD_u8_HomeKaypadButton(u8 *Ploc_u8_ButtuonValue)
 	{
 		while(1)
 		{
-			/*MCAL_UART_voidReceiveData(&G_FanFlagOn);
-			if(G_FanFlagOn == 1)
-			{
-
-			}*/
-
-/*
+				//G_LM35 = LM35_Read();
+			/*
 			if(G_FanControlFlag == 0)
 			{
-				G_LM35 = LM35_Read();
 				if((G_LM35 > TURN_DC_ON_TEMP) && (G_FanFlagOn == 0))
 				{
 					G_FanFlagOn = 1;
 					G_FanFlag = 1;
 					G_FanFlagOff = 0;
 					HAL_DCMOTOR_void_DcMotorClockWise(motor_speed);
-					APP_DEVICES_void_AppGetAnyDeviceOn();
+					//APP_DEVICES_void_AppGetAnyDeviceOn();
 				}
 				else if((G_LM35 < TURN_DC_OFF_TEMP) && (G_FanFlagOff == 0))
 				{
@@ -255,7 +246,7 @@ STD_TYPE HAL_KEYPAD_u8_HomeKaypadButton(u8 *Ploc_u8_ButtuonValue)
 					G_FanFlag = 0;
 					G_FanFlagOn = 0;
 					HAL_DCMOTOR_void_DcMotorStop();
-					APP_DEVICES_void_AppGetAnyDeviceOn();
+					//APP_DEVICES_void_AppGetAnyDeviceOn();
 				}
 				else if((G_LM35 > TURN_DC_OFF_TEMP) && (G_LM35 < TURN_DC_ON_TEMP))
 				{
@@ -263,7 +254,13 @@ STD_TYPE HAL_KEYPAD_u8_HomeKaypadButton(u8 *Ploc_u8_ButtuonValue)
 					G_FanFlagOff = 0;
 				}
 			}
-*/
+			*/
+			if(m == 1)
+			{
+				APP_DEVICES_void_AppGetAnyDeviceOn();
+				m = 0;
+			}
+//			APP_DEVICES_void_AppGetAnyDeviceOn();
 			c = 3;
 			for(column =0; column <= 3; column++)
 			{

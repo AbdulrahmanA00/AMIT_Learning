@@ -21,6 +21,15 @@ STD_TYPE HAL_LED_u8LedInit(u8 LOC_u8LEDPortID, u8 LOC_u8LEDPinID)
 	return LOC_u8Return_Value;
 }
 
+STD_TYPE HAL_LED_u8AllLedsInit()
+{
+	HAL_LED_u8LedInit(LED1_Port,LED1_Pin);
+	HAL_LED_u8LedInit(LED2_Port,LED2_Pin);
+	HAL_LED_u8LedInit(LED3_Port,LED3_Pin);
+	HAL_LED_u8LedInit(LED4_Port,LED4_Pin);
+	HAL_LED_u8LedInit(LED5_Port,LED5_Pin);
+}
+
 //LED_Mode
 STD_TYPE HAL_LED_u8LedMode(u8 LOC_u8LEDPortID, u8 LOC_u8LEDPinID, u8 LOC_u8LEDMode)
 {

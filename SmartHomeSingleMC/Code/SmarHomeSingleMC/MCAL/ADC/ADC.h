@@ -34,6 +34,9 @@
 #define ADC_CHANNEL ADC0
 #define KEEP_ADMUX 0b01000001
 
+
+#define  ADC_REG    *((volatile u16*)0x24)
+
 void MCAL_ADC_ADC_Init(void);
 void MCAL_ADC_ADC_StartConversion(void);
 void MCAL_ADC_ADC_InterruptEnable(void);

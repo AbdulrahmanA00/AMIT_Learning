@@ -9,8 +9,7 @@
 #define MCAL_TIMER_TIMER1_H_
 
 #include"../../Common/Macros.h"
-//#include"../../Common/MCU.h"
-#include"../../Common/STD_Types.h"
+#include"../../Common/MCU.h"
 #include "../GIE/GIE.h"
 
 #include"Timer1_interfacing.h"

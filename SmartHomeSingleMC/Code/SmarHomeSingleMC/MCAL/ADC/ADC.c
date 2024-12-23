@@ -32,7 +32,7 @@ void MCAL_ADC_ADC_Init(void)
 	/* To select an ADC channel */
 	ADMUX = (ADMUX & KEEP_ADMUX) | ADC_CHANNEL ;
 	/* To select the ADC frequency (Under Editing) */
-	ADCSRA = 0b10000111;
+	ADCSRA = 0b10101111;
 
 	//MCAL_Interrupt_GIE_Enable();
 	/* To enable ADC circuit */
@@ -51,7 +51,50 @@ void MCAL_ADC_ADC_InterruptDisable(void)
 	/* To Disable ADC Interrupt */
 	CLR_BIT(ADCSRA,ADIE);
 }
+/****
+u16 ADC_u16Read(void)
+{
+	u16 read_val; // which contain the converted value which will be returned
+	SET_BIT(ADCSRA,ADSC); // start the ADC conversion
+	while(IS_BIT_CLR(ADCSRA,ADIF));//stay in your position till ADIF become 1 when conversion complete
+	SET_BIT(ADCSRA,ADIF); // clear ADIF
+	read_val=(ADCL); //reas the ADCL register
+	read_val|=(ADCH<<8);//read the whole register
+	return read_val ; // return the converted value
+}
+*****/
+/*
+u16 ADC_u16_Read( u8 copy_u8_ch){
+	
+	ADMUX &=0b11100000 ;
+	ADMUX |=copy_u8_ch;
+	
+	SET_BIT(ADCSRA,6) ;  // START conversion
+	
+	while(GET_BIT(ADCSRA,4)==0) ;
+	
+	// clr flag by writing 1
+	SET_BIT(ADCSRA,4) ;
+	
+	return ADC_REG    ;
 
+	
+}
+void ADC_Vid_Init(void){
+	
+	/* Select prescaler */
+/*	
+	ADCSRA &=0b11111000 ;
+	ADCSRA|=7  ;
+	/*  select AVCC  */
+/*	CLR_BIT(ADMUX,7) ;
+	SET_BIT(ADMUX,6)  ;
+	
+	/*  ENABLE ADC */
+/*	SET_BIT(ADCSRA,7) ;
+	
+}
+*/
 
 void MCAL_ADC_ADC_StartConversion(void)
 {

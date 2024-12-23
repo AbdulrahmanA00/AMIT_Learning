@@ -11,17 +11,18 @@
 /*******************************Includes Section *****************************************/
 
 
+#include "../../HAL/KEYPAD/KEYPAD_interface.h"
+#include "../../HAL/LCD/LCD_interface.h"
+#include "../../HAL/Buzzer/Buzzer.h"
+#include "../../APP/Registeration/Registeration.h"
 
 #include "PASSWORD_config.h"
-
 /*******************************Macros Section *****************************************/
 
 /*******************************Prototyping Section *****************************************/
 
 STD_TYPE APP_PASSWORD_u8_AppGetPasswordInit(void);
-void APP_USERID_u8_AppUserID(void);
-void APP_PASSWORD_u8_AppGetPassword(void);
-//void APP_PASSWORD_u8_AppGetPassword(u16 Loc_32_CheckID);
-//u16  APP_USERID_u8_AppUserID(void);
+u16 APP_USERID_u8_AppUserID(void);
+void APP_PASSWORD_u8_AppGetPassword(u16 LOC_u16UserID);
 
 #endif /* APP_PASSWORD_PASSWORD_INTERFACE_H_ */

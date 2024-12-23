@@ -11,8 +11,7 @@
 #include <stdio.h>
 #include "../../Common/Macros.h"
 #include "../../Common/MCU.h"
-
-#define NULL ((void *)0)
+#include "../../Common/STD_Types.h"
 #define E_OK 		0
 #define E_NOT_OK 	1
 #define PortA 	0
@@ -20,21 +19,39 @@
 #define PortC 	2
 #define PortD 	3
 #define Port_Output		0xff
-#define PORT_Output		Port_Output
 #define Port_Input 		0x00
-#define PORT_Input 		Port_Input
 #define Port_LOW 		0x00
-#define PORT_LOW 		Port_LOW
 #define Port_HIGH 		0xff
-#define PORT_HIGH 		Port_HIGH
 #define	Pin_Input 		0
-#define PIN_INPUT		Pin_Input
 #define	Pin_Output 		1
-#define	PIN_OUTPUT 		Pin_Output
 #define Pin_LOW 		0
-#define PIN_LOW 		Pin_LOW
 #define Pin_HIGH 		1
-#define PIN_HIGH 		Pin_HIGH
+
+#define  PORT_OUTPUT  0xFF
+#define  PORT_INPUT   0x00
+#define  PIN_OUTPUT   1
+#define  PIN_INPUT	  0
+
+#define  PORT_HIGH    0xFF
+#define  PORT_LOW     0x00
+#define  PIN_HIGH     1
+#define  PIN_LOW	  0
+
+typedef enum
+{
+	ZERO,
+	ONE,
+	TWO,
+	THREE,
+	FOUR,
+	FIVE,
+	SIX,
+	SEVEN,
+	EIGHT,
+	NINE,
+	TEN
+}Enum_Numbers;
+
 enum {Pin0,Pin1,Pin2,Pin3,Pin4,Pin5,Pin6,Pin7} Pin_Number;
 
 #define PIN0   0

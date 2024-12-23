@@ -155,19 +155,19 @@ void MCAL_UART_voidSendString(u8 *LOC_Pu8String)
 void MCAL_UART_voidReceiveString(u8 *LOC_Pu8String)
 {
 	u8 LOC_u8CharacterReceived;
-    u32 LOC_u32Counter = 0;
+	u32 LOC_u32Counter = 0;
 
-	    while (1) {
-	        MCAL_UART_voidReceiveData(&LOC_u8CharacterReceived);
-	        if (LOC_u8CharacterReceived == '\r' ) {  // Enter key pressed
-	            LOC_Pu8String[LOC_u32Counter] = '\0';          // Null-terminate the string
-	            break;
-	        }
-	        if (LOC_u32Counter < MAX_BUFFER_SIZE - 1) {
-	        	LOC_Pu8String[LOC_u32Counter++] = LOC_u8CharacterReceived;           // Store the received character
-	        }
+	while (1) {
+		MCAL_UART_voidReceiveData(&LOC_u8CharacterReceived);
+		if (LOC_u8CharacterReceived == '\r' ) {  // Enter key pressed
+			LOC_Pu8String[LOC_u32Counter] = '\0';          // Null-terminate the string
+			break;
+		}
+		if (LOC_u32Counter < MAX_BUFFER_SIZE - 1) {
+			LOC_Pu8String[LOC_u32Counter++] = LOC_u8CharacterReceived;           // Store the received character
+		}
 
-}
+	}
 }
 
 

@@ -29,34 +29,49 @@
 #define PORTD 	(*(volatile u8* const)0x32)
 #define DDRD 	(*(volatile u8* const)0x31)
 #define PIND 	(*(volatile u8* const)0x30)
-/*
 
-****************** EXT_INT ****************
+/***************INTERRUPT***************/
+
+/*#define   SREG     (*(volatile u8*)0x5F)
+#define   GICR     (*(volatile u8*)0x5B)
+#define   GIFR     (*(volatile u8*)0x5A)
+#define   MCUCR    (*(volatile u8*)0x55)
+#define   MCUCSR   (*(volatile u8*)0x54)*/
+
+/**************SPI************************/
+
+#define  SPCR        (*(volatile u8*)0x2D)
+#define  SPSR        (*(volatile u8*)0x2E)
+#define  SPDR        (*(volatile u8*)0x2F)
+
+
+
+/****************** EXT_INT ****************/
 
 #define MCUCR 	  (*((volatile u8* const)0x55))
 #define MCUCSR    (*((volatile u8* const)0x54))
 #define GICR  	  (*((volatile u8* const)0x5B))
 #define GIFR  	  (*((volatile u8* const)0x5A))
 
- MCUCR BITS
+// MCUCR BITS
 #define ISC00_BIT 0
 #define ISC01_BIT 1
 #define ISC10_BIT 2
 #define ISC11_BIT 3
 
- MCUCSR BITS
+ //MCUCSR BITS
 #define ISC2_BIT  6
 
- GICR BITS
+// GICR BITS
 #define INT1_BIT  7
 #define INT0_BIT  6
 #define INT2_BIT  5
 
- GIFR BITS
+// GIFR BITS
 #define INTF1		7
 #define INTF0		6
 #define INTF2		5
-*/
+
 
 /***************** ADC ***************/
 

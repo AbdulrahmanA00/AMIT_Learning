@@ -11,8 +11,6 @@
 #include "../../Common/Macros.h"
 #include "../../Common/MCU.h"
 
-#define ISR(vectNum)	void vectNum(void)__attribute__((signal));\
-					  	void vectNum(void)
 
 /*******	External Interrupt	********/
 #define EXTINT0_vect	__vector_1
